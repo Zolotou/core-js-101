@@ -51,8 +51,8 @@ function getCicleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return Math.floor(value1 / 2 + value2 / 2);
 }
 
 /**
@@ -70,8 +70,8 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2));
 }
 
 /**
@@ -132,8 +132,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const str = value.toString();
-  return str.charAt(str.length - 1);
+  const string = `${value}`;
+  return string[string.length - 1];
 }
 
 
@@ -186,8 +186,8 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / (10 ** pow)) * (10 ** pow);
 }
 
 /**
@@ -226,8 +226,11 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  if (Number(value)) {
+    return value;
+  }
+  return def;
 }
 
 module.exports = {
